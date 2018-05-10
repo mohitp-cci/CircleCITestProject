@@ -21,10 +21,13 @@ jobs:
       JVM_OPTS: -Xmx3200m
       TERM: dumb
 
-      sdkmanager --update && yes | sdkmanager --licenses
+
 
     steps:
       - checkout
+
+      sdkmanager --update && yes | sdkmanager --licenses
+
 
       # Download and cache dependencies
       - restore_cache:
