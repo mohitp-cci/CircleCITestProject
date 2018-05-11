@@ -31,10 +31,12 @@ platform :android do
   end
 
  desc "Submit a new debug Build to fabric Beta"
-  lane :debugUpload do
+  lane :debugUpload do |values|
+
+    parameter1  = values[:parameter1]
 
     # build the debug variant
-     build_android_app(task: "assembleDebug")
+     build_android_app(task: "assembleDebug",properties: { 'versionCode' => parameter1 })
 
 
      # upload to Beta by Crashlytics
