@@ -33,7 +33,7 @@ platform :android do
  desc "Submit a new debug Build to fabric Beta"
   lane :debugUpload do |values|
 
-    parameter1  = values[:parameter1]
+    parameter1  = values[:key]
 
     # build the debug variant
      build_android_app(task: "assembleDebug",properties: { 'versionCode' => parameter1 })
