@@ -49,7 +49,11 @@ android {
         exclude 'META-INF/maven/com.easycamera/easycamera/pom.properties'
     }
 
-
+    configurations.all {
+        resolutionStrategy {
+            force 'com.android.support:support-annotations:23.1.1'
+        }
+    }
 }
 
 
