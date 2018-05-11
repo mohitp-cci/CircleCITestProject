@@ -53,8 +53,8 @@ jobs:
           command: ./gradlew :app:assembleDebug :app:assembleAndroidTest
 
 deploy_crashlytics:
-  <<: *android_config
+
      - run:
              name: Deploy to Crashlytics Beta
-             command: bundle exec fastlane debugUpload
+             command: gradle crashlyticsUploadDistributionDebug
 
