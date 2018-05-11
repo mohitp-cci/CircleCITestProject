@@ -25,10 +25,14 @@ jobs:
 dependencies:
   pre:
     - echo y | android update sdk --no-ui --all --filter "package-name"
-    
+
 
     steps:
       - checkout
+
+    post:
+    - cp -r licenses/. $ANDROID_HOME/licenses
+
 
       # Download and cache dependencies
       - restore_cache:
