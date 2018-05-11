@@ -55,5 +55,9 @@ jobs:
           destination: /apk/
 
       - run:
+           name: setup bundler
+           command: bundler install
+
+      - run:
            name: upload lane
-           command: fastlane uploadDebug
+           command: bundler exec fastlane init
