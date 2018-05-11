@@ -37,6 +37,7 @@ jobs:
     <<: *android_config
     steps:
       - checkout
+      -run: bundle install
       - restore_cache:
           key: cache-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}-{{ checksum "build.gradle" }}-{{ checksum "app/build.gradle" }}
       - run:
@@ -50,10 +51,9 @@ jobs:
       - run:
           name: Gradle build (debug)
           command: ./gradlew :app:assembleDebug :app:assembleAndroidTest
-      - store_artifacts:
-          path: app/build/outputs/apk/
-          destination: /apk/
 
+deploy_crashlytics:
+  <<: *android_config
      - run:
              name: Deploy to Crashlytics Beta
              command: bundle exec fastlane debugUpload
