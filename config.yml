@@ -25,6 +25,7 @@ jobs:
 dependencies:
   pre:
     - echo y | android update sdk --no-ui --all --filter "package-name"
+    
 
     steps:
       - checkout
