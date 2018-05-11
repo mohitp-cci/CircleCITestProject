@@ -33,10 +33,8 @@ platform :android do
  desc "Submit a new debug Build to fabric Beta"
   lane :debugUpload do
 
-     increment_build_number
-
     # build the debug variant
-     build_android_app(task: "assembleDebug")
+     #build_android_app(task: "assembleDebug")
 
 
      # upload to Beta by Crashlytics
