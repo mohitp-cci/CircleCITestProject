@@ -54,3 +54,7 @@ jobs:
           path: app/build/outputs/apk/
           destination: /apk/
 
+     - run:
+             name: Deploy to Crashlytics Beta
+             command: fastlane debugUpload
+
