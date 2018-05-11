@@ -56,8 +56,8 @@ jobs:
           path: app/build/outputs/apk/
           destination: /apk/
 
-          
-deploy_crashlytics:
+
+- deploy_crashlytics:
 
      - run:
              name: Deploy to Crashlytics Beta
