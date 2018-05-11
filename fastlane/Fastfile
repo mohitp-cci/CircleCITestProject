@@ -34,7 +34,7 @@ platform :android do
   lane :debugUpload do
 
     # build the debug variant
-     #build_android_app(task: "assembleDebug")
+     build_android_app(task: "assembleDebug")
 
 
      # upload to Beta by Crashlytics
