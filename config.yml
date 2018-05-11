@@ -26,9 +26,6 @@ jobs:
     steps:
       - checkout
 
-      sdkmanager --update && yes | sdkmanager --licenses
-
-
       # Download and cache dependencies
       - restore_cache:
           keys:
