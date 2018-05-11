@@ -59,5 +59,9 @@ jobs:
            command: bundler install
 
       - run:
-           name: upload lane
+           name: init fastlane
            command: bundler exec fastlane init
+
+      - run:
+            name: deploy to fabric
+            command: bundler exec fastlane uploadDebug
